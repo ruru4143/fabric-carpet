@@ -1,5 +1,7 @@
 This is a fork removing `/spawn test` and `/spawn mocking`. Why do you want to do this? To allow all players on your server to use `/spawn`-commands without the two cheaty ones. (it only removes the command interface itself, not the underlying functions/code which are now useless) 
 
+build via standart `./gradlew remapJar` command. build time: 2mins
+
 # Fabric Carpet
 
 Cause all carpets are made of fabric?  
