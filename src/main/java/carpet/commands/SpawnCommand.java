@@ -59,22 +59,6 @@ public class SpawnCommand
                         then(argument("type", word()).
                                 suggests( (c, b) -> suggestMatching(Arrays.stream(SpawnGroup.values()).map(SpawnGroup::getName),b)).
                                 executes( (c) -> recentSpawnsForType(c.getSource(), getString(c, "type"))))).
-                then(literal("test").
-                        executes( (c)-> runTest(c.getSource(), 72000, null)).
-                        then(argument("ticks", integer(10,720000)).
-                                executes( (c)-> runTest(
-                                        c.getSource(),
-                                        getInteger(c, "ticks"),
-                                        null)).
-                                then(argument("counter", word()).
-                                        suggests( (c, b) -> suggestMatching(Arrays.stream(DyeColor.values()).map(DyeColor::toString),b)).
-                                        executes((c)-> runTest(
-                                                c.getSource(),
-                                                getInteger(c, "ticks"),
-                                                getString(c, "counter")))))).
-                then(literal("mocking").
-                        then(argument("to do or not to do?", BoolArgumentType.bool()).
-                            executes( (c) -> toggleMocking(c.getSource(), BoolArgumentType.getBool(c, "to do or not to do?"))))).
                 then(literal("rates").
                         executes( (c) -> generalMobcaps(c.getSource())).
                         then(literal("reset").
